@@ -58,11 +58,8 @@ export default function SiteFrame({ children }: { children: ReactNode }) {
     <section className="flex min-h-[calc(100dvh-4.25rem)] flex-col sm:ml-[var(--index-width)] sm:block sm:min-h-0">
      {children}
      <footer
-      className="type-caption mt-auto self-center bg-white px-[var(--space-page)] py-[var(--space-page)] text-black/40 rule-top sm:hidden"
+      className="-mx-[var(--space-page)] type-caption mt-auto bg-white px-[var(--space-page)] pt-[var(--space-page)] text-black/40 rule-top sm:hidden"
       style={{
-       width: "100vw",
-       marginLeft: "calc(50% - 50vw)",
-       marginBottom: "calc(var(--space-page) * -1)",
        paddingBottom: "calc(var(--space-page) + env(safe-area-inset-bottom, 0px))",
       }}
      >
