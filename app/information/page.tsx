@@ -49,8 +49,11 @@ export default function InformationPage() {
      </p>
     </section>
 
-    {sections.map((section) => (
-     <section key={section.title} className="grid border-b rule-border sm:grid-cols-[minmax(10rem,0.45fr)_minmax(0,1fr)]">
+    {sections.map((section, index) => (
+     <section
+      key={section.title}
+      className={`grid sm:grid-cols-[minmax(10rem,0.45fr)_minmax(0,1fr)] ${index === sections.length - 1 ? "" : "border-b rule-border"}`}
+     >
       <h2 className="type-body accent-text border-b rule-border p-[var(--space-page)] sm:border-b-0 sm:border-r">{section.title}</h2>
       <div className="type-body p-[var(--space-page)] text-black/75">
        {section.body.map((line, index) => (line ? <p key={`${section.title}-${index}`}>{line}</p> : <br key={`${section.title}-${index}`} />))}

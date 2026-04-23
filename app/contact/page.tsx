@@ -31,7 +31,7 @@ export default function ContactPage() {
      </div>
     </section>
 
-    <section className="grid border-b rule-border sm:grid-cols-[minmax(10rem,0.45fr)_minmax(0,1fr)]">
+    <section className="grid sm:grid-cols-[minmax(10rem,0.45fr)_minmax(0,1fr)]">
      <h2 className="type-body accent-text border-b rule-border p-[var(--space-page)] sm:border-b-0 sm:border-r">Availability</h2>
      <p className="type-body p-[var(--space-page)] text-black/75">
       Open to full stack developer roles, frontend-focused positions, and portfolio review conversations.

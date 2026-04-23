@@ -14,13 +14,9 @@ export default function ProjectDetail({ project }: { project: Project }) {
           </Link>
         </header>
 
-        <section className="border-b rule-border p-[var(--space-page)]">
+        <section className="p-[var(--space-page)]">
           <h3 className="type-display">
-            <a
-              href={project.siteUrl}
-              target="_blank"
-              rel="noreferrer"
-            >
+            <a href={project.siteUrl} target="_blank" rel="noreferrer">
               Visit Site ↗
             </a>
           </h3>
@@ -47,12 +43,12 @@ export default function ProjectDetail({ project }: { project: Project }) {
           </div>
 
           <div className="type-body mt-[var(--space-block)] grid gap-[var(--space-gap)] border-t rule-border pt-[var(--space-gap)] text-black/55 sm:grid-cols-2 sm:leading-[1.15]">
-            <div>
+            <div className="break-keep">
               {project.meta.map((line) => (
                 <p key={line}>{line}</p>
               ))}
             </div>
-            <div className="text-black">
+            <div className="break-keep text-black">
               {project.detailText.map((paragraph) => (
                 <p key={paragraph} className="mb-[var(--space-gap)] last:mb-0">
                   {paragraph}
