@@ -1,33 +1,7 @@
 import Link from "next/link";
+import InfoSection from "../components/InfoSection";
 import SiteFrame from "../components/SiteFrame";
-
-const sections = [
- {
-  title: "Skills",
-  body: [
-   "TypeScript",
-   "React",
-   "Next.js",
-   "Tailwind CSS",
-   "Node.js",
-   "Fiebase",
-   "MySQL",
-   "SpringBoot",
-   "GitHub",
-   "AWS EC2",
-   "Vercel Deployment",
-   "Responsive Interface",
-  ],
- },
- {
-  title: "Tools",
-  body: ["Visual Studio Code", "GitHub", "Vercel"],
- },
- {
-  title: "Contact",
-  body: ["sh.hyeing@gmail.com", "github.com/sh-hyeing"],
- },
-];
+import { aboutSections, siteProfile } from "../site-data";
 
 export default function InformationPage() {
  return (
@@ -42,26 +16,20 @@ export default function InformationPage() {
      <p className="type-display border-b rule-border p-[var(--space-page)] text-black/40 sm:border-b-0 sm:border-r">
       Junior Developer
       <br />
-      Portfolio 2026
+      {siteProfile.title}
      </p>
      <p className="type-display p-[var(--space-page)]">
       I build simple, maintainable web interfaces with a focus on readable structure, responsive layouts, and practical full stack development.
      </p>
     </section>
 
-    {sections.map((section, index) => (
-     <section
-      key={section.title}
-      className={`grid sm:grid-cols-[minmax(10rem,0.45fr)_minmax(0,1fr)] ${index === sections.length - 1 ? "" : "border-b rule-border"}`}
-     >
-      <h2 className="type-body accent-text border-b rule-border p-[var(--space-page)] sm:border-b-0 sm:border-r">{section.title}</h2>
-      <div className="type-body p-[var(--space-page)] text-black/75">
-       {section.body.map((line, index) => (line ? <p key={`${section.title}-${index}`}>{line}</p> : <br key={`${section.title}-${index}`} />))}
-      </div>
-     </section>
+    {aboutSections.map((section, index) => (
+     <InfoSection key={section.title} title={section.title} last={index === aboutSections.length - 1}>
+      {section.lines.map((line) => (
+       <p key={`${section.title}-${line}`}>{line}</p>
+      ))}
+     </InfoSection>
     ))}
-
-    <footer className="type-caption p-[var(--space-page)] text-black/25">Last Updated 23.04.26</footer>
    </article>
   </SiteFrame>
  );

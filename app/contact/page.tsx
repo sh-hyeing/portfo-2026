@@ -1,5 +1,7 @@
 import Link from "next/link";
+import InfoSection from "../components/InfoSection";
 import SiteFrame from "../components/SiteFrame";
+import { siteProfile } from "../site-data";
 
 export default function ContactPage() {
  return (
@@ -14,29 +16,22 @@ export default function ContactPage() {
      <p className="type-display border-b rule-border p-[var(--space-page)] text-black/40 sm:border-b-0 sm:border-r">
       Email
       <br />
-      Instagram
-      <br />
       GitHub
      </p>
      <div className="type-display p-[var(--space-page)]">
-      <a href="mailto:email@example.com">email@example.com</a>
+      <a href={`mailto:${siteProfile.email}`}>{siteProfile.email}</a>
       <br />
-      <a href="https://www.instagram.com/" target="_blank" rel="noreferrer">
-       instagram.com/username
-      </a>
-      <br />
-      <a href="https://github.com/sh-hyeing" target="_blank" rel="noreferrer">
-       github.com/username
+      <a href={siteProfile.githubUrl} target="_blank" rel="noreferrer">
+       {siteProfile.githubLabel}
       </a>
      </div>
     </section>
 
-    <section className="grid sm:grid-cols-[minmax(10rem,0.45fr)_minmax(0,1fr)]">
-     <h2 className="type-body accent-text border-b rule-border p-[var(--space-page)] sm:border-b-0 sm:border-r">Availability</h2>
-     <p className="type-body p-[var(--space-page)] text-black/75">
+    <InfoSection title="Availability" last>
+     <p>
       Open to full stack developer roles, frontend-focused positions, and portfolio review conversations.
      </p>
-    </section>
+    </InfoSection>
    </article>
   </SiteFrame>
  );

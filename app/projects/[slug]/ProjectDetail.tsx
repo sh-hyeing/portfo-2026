@@ -14,10 +14,10 @@ export default function ProjectDetail({ project }: { project: Project }) {
           </Link>
         </header>
 
-        <section className="p-[var(--space-page)]">
+        <section className="p-[var(--space-page)] sm:p-[var(--space-page)]">
           <h3 className="type-display">
             <a href={project.siteUrl} target="_blank" rel="noreferrer">
-              Visit Site ↗
+              <span className="underline">Visit Site</span>
             </a>
           </h3>
 
@@ -49,9 +49,10 @@ export default function ProjectDetail({ project }: { project: Project }) {
               ))}
             </div>
             <div className="break-keep text-black">
-              {project.detailText.map((paragraph) => (
-                <p key={paragraph} className="mb-[var(--space-gap)] last:mb-0">
-                  {paragraph}
+              {project.detailText.map((item) => (
+                <p key={item.label} className="mb-[var(--space-gap)] last:mb-0">
+                  <span className="accent-text">{item.label}</span>
+                  <span>: {item.body}</span>
                 </p>
               ))}
             </div>

@@ -1,3 +1,46 @@
+export const siteProfile = {
+ title: "Portfolio 2026",
+ role: "Full Stack Developer",
+ footer: "\u00A92026 JeongHyein.",
+ email: "sh.hyeing@gmail.com",
+ githubLabel: "github.com/sh-hyeing",
+ githubUrl: "https://github.com/sh-hyeing",
+} as const;
+
+export const menuLinks = [
+ { label: "About", href: "/information" },
+ { label: "Email", href: "/contact" },
+ { label: "Github", href: siteProfile.githubUrl, external: true },
+] as const;
+
+export const aboutSections = [
+ {
+  title: "Skills",
+  lines: [
+   "TypeScript",
+   "React",
+   "Next.js",
+   "Tailwind CSS",
+   "Node.js",
+   "Firebase",
+   "MySQL",
+   "Spring Boot",
+   "GitHub",
+   "AWS EC2",
+   "Vercel Deployment",
+   "Responsive Interface",
+  ],
+ },
+ {
+  title: "Tools",
+  lines: ["Visual Studio Code", "GitHub", "Vercel"],
+ },
+ {
+  title: "Contact",
+  lines: [siteProfile.email, siteProfile.githubLabel],
+ },
+] as const;
+
 export const projects = [
  {
   title: "Portfolio 2025",
@@ -14,11 +57,24 @@ export const projects = [
   mobileImage: "/projects/protfolio-2025-mb.jpg",
   mobileWidth: 1125,
   mobileHeight: 2122,
-  description: "나만의 색깔과 작업 흐름을 담아낸 개인 포트폴리오 웹사이트.",
+  description: "나만의 색깔과 작업 흐름을 담아낸 개인 포트폴리오 웹사이트",
   detailText: [
-   "나만의 색깔과 작업 흐름을 담아낸 개인 포트폴리오 웹사이트입니다.",
-   "Spring Boot와 Thymeleaf를 활용한 SSR 방식으로 페이지를 구성하고, Swup.js를 적용해 SPA처럼 자연스러운 전환 경험을 구현했습니다. GitHub Actions 기반 CI/CD 파이프라인을 구축해 배포 과정을 자동화했고 AWS EC2와 MySQL 환경에서 실제 운영 가능한 구조로 정리했습니다.",
-   "자기소개, 기술 스택 카드, 프로젝트 상세 페이지, MySQL 기반 방명록 기능을 구현했습니다.",
+   {
+    label: "포트폴리오 소개",
+    body: "나만의 색깔과 작업 흐름을 담아낸 개인 포트폴리오 웹사이트입니다.",
+   },
+   {
+    label: "메인 구조",
+    body: "Spring Boot와 Thymeleaf를 활용한 SSR 방식으로 페이지를 구성하고, Swup.js를 적용해 SPA처럼 자연스러운 전환 경험을 구현했습니다.",
+   },
+   {
+    label: "배포 환경",
+    body: "GitHub Actions 기반 CI/CD 파이프라인을 구축해 배포 과정을 자동화했고, AWS EC2와 MySQL 환경에서 실제 운영 가능한 구조로 정리했습니다.",
+   },
+   {
+    label: "주요 기능",
+    body: "자기소개, 기술 스택 소개, 프로젝트 상세 페이지, MySQL 기반 방명록 기능을 구현했습니다.",
+   },
   ],
   meta: [
    "Portfolio 2025",
@@ -44,11 +100,24 @@ export const projects = [
   mobileImage: "/projects/yt-web-mobile.png",
   mobileWidth: 488,
   mobileHeight: 857,
-  description: "유튜브 자막을 영어·한국어 학습용 스크립트로 정리하고 PDF로 저장하는 Gemini API 활용 웹 기반 학습 도구.",
+  description: "유튜브 자막을 영어·한국어 학습 스크립트로 정리하고 PDF로 저장하는 Gemini API 기반 학습 도구",
   detailText: [
-   "유튜브 영상 자막을 불러와 영어·한국어 학습용 스크립트로 정리하고 PDF로 저장할 수 있는 웹 기반 학습 도구입니다.",
-   "Next.js 기반 웹앱으로 구현하고, Vercel 환경에서 직접 자막 추출이 어려운 문제를 Railway의 yt-dlp transcript server로 분리해 해결했습니다. 또한 Gemini 다중 API 키 회전과 자동 재시도 로직을 적용해 긴 자막도 안정적으로 처리할 수 있도록 구성했습니다.",
-   "유튜브 자막 추출, Gemini 기반 학습 스크립트 생성, 다중 API 키 회전, quota exceeded 자동 재시도, 중단 및 이어하기, PDF 다운로드, 반응형 UI를 구현했습니다.",
+   {
+    label: "서비스 소개",
+    body: "유튜브 영상 자막을 불러와 영어·한국어 학습 스크립트로 정리하고 PDF로 저장할 수 있는 웹 기반 학습 도구입니다.",
+   },
+   {
+    label: "자막 추출",
+    body: "Vercel 환경에서 직접 처리하기 어려운 자막 추출 문제를 Railway의 yt-dlp transcript server로 분리해 안정적으로 구성했습니다.",
+   },
+   {
+    label: "AI 연동",
+    body: "Gemini 다중 API 키 회전과 자동 재시도 로직을 적용해 긴 자막도 비교적 안정적으로 처리할 수 있도록 설계했습니다.",
+   },
+   {
+    label: "주요 기능",
+    body: "유튜브 자막 추출, 학습 스크립트 생성, PDF 다운로드, 중단 및 이어하기 흐름까지 포함한 학습 도구로 구현했습니다.",
+   },
   ],
   meta: [
    "Youtube Script Maker",
@@ -74,11 +143,24 @@ export const projects = [
   mobileImage: "/projects/letter-mb.gif",
   mobileWidth: 344,
   mobileHeight: 696,
-  description: "창작 교류와 기록을 위한 편지봉투 컨셉의 감성형 디지털 아카이빙 웹페이지.",
+  description: "창작 교류와 기록을 위한 편지봉투 컨셉의 감성형 디지털 아카이빙 웹페이지",
   detailText: [
-   "학부 시절 2인 프로젝트로 진행한 창작 교류와 기록을 위한 감성형 디지털 아카이빙 플랫폼입니다.",
-   "창작 교류 행사와 관련된 기록을 온라인에서 정리하고 공유할 수 있도록 구성했으며 편지봉투 컨셉과 행사 분위기에 어울리는 레이아웃과 시각 요소를 중심으로 설계했습니다.",
-   "공지 확인, 갤러리 리스트, Firebase 기반 방명록 기능을 구현해 참여자와 방문자가 기록을 함께 남길 수 있도록 구성했습니다.",
+   {
+    label: "프로젝트 소개",
+    body: "학부 시절 2인 프로젝트로 진행한 편지봉투 컨셉의 감성형 디지털 아카이빙 웹페이지입니다.",
+   },
+   {
+    label: "디자인 방향",
+    body: "창작 교류 행사와 관련된 기록을 온라인에서 정리하고 공유할 수 있도록 구성하고, 편지봉투 컨셉에 맞는 감성적인 화면 흐름을 구현했습니다.",
+   },
+   {
+    label: "사용자 경험",
+    body: "단순 정보 전달을 넘어서 행사 분위기와 어울리는 레이아웃과 시각 요소를 중심으로 사용자 경험을 설계했습니다.",
+   },
+   {
+    label: "주요 기능",
+    body: "공지 확인, 갤러리 리스트, Firebase 기반 방명록 기능을 통해 참여자와 방문자가 기록을 함께 남길 수 있도록 구성했습니다.",
+   },
   ],
   meta: [
    "Letter Project",
@@ -90,6 +172,6 @@ export const projects = [
    "Two-person university project",
   ],
  },
-];
+] as const;
 
 export type Project = (typeof projects)[number];
