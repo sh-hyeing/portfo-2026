@@ -8,8 +8,8 @@ export const siteProfile = {
 } as const;
 
 export const menuLinks = [
- { label: "About", href: "/information" },
- { label: "Email", href: "/contact" },
+ { label: "About", href: "/information", external: false },
+ { label: "Email", href: "/contact", external: false },
  { label: "Github", href: siteProfile.githubUrl, external: true },
 ] as const;
 
