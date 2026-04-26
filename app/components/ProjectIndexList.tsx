@@ -10,7 +10,7 @@ export default function ProjectIndexList() {
      key={project.slug}
      className={`grid sm:grid-cols-[minmax(0,1fr)_minmax(0,1.2fr)] ${index === projects.length - 1 ? "sm:border-b sm:rule-border" : "border-b rule-border"}`}
     >
-     <Link href={`/projects/${project.slug}`} className="image-link block border-b rule-border p-[var(--space-page)] sm:border-b-0 sm:border-r">
+     <Link href={`/projects/${project.slug}`} className="image-link project-index-link block border-b rule-border p-[var(--space-page)] sm:border-b-0 sm:border-r">
       <Image
        src={project.image}
        alt={`${project.title} preview`}
@@ -19,7 +19,7 @@ export default function ProjectIndexList() {
        sizes="(max-width: 640px) 100vw, 28vw"
        quality={100}
        unoptimized
-       className="h-auto w-full"
+       className="project-index-image h-auto w-full"
       />
      </Link>
      <div className="grid grid-cols-[4ch_1fr] gap-[calc(var(--space-gap)*1.1)] px-[var(--space-page)] py-[calc(var(--space-page)*1.15)] sm:gap-[var(--space-gap)] sm:p-[var(--space-page)]">
