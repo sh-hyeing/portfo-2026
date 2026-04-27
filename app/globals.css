@@ -113,16 +113,19 @@ button {
 }
 
 @media (hover: none) and (pointer: coarse) {
-  .project-index-link:active {
+  .project-index-link:active,
+  .project-index-link.is-touch-active {
     opacity: 1;
   }
 
-  .project-index-link:active .project-index-image {
+  .project-index-link:active .project-index-image,
+  .project-index-link.is-touch-active .project-index-image {
     filter: none;
     opacity: 1;
   }
 
-  .project-index-link:active img {
+  .project-index-link:active img,
+  .project-index-link.is-touch-active img {
     opacity: 1;
   }
 }

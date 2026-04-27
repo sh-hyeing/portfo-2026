@@ -9,7 +9,7 @@ export default function SiteFrame({ children }: { children: ReactNode }) {
  const [menuOpen, setMenuOpen] = useState(false);
 
  return (
-  <main className="min-h-screen bg-white px-[var(--space-page)] pt-[var(--space-page)] pb-0 text-black sm:p-0">
+  <main className="min-h-screen bg-white px-[var(--space-page)] pt-[var(--space-page)] pb-0 text-black sm:h-screen sm:overflow-hidden sm:p-0">
    <header className="-mx-[var(--space-page)] mb-0 flex items-start justify-between border-b rule-border px-[var(--space-page)] pb-[var(--space-page)] sm:mx-0 sm:hidden sm:px-0">
     <Link href="/" className="type-display accent-text">
      {siteProfile.title}
@@ -19,7 +19,7 @@ export default function SiteFrame({ children }: { children: ReactNode }) {
     </button>
    </header>
 
-   <div className="grid gap-0 sm:block">
+   <div className="grid gap-0 sm:h-screen sm:block">
     <aside className="hidden sm:fixed sm:left-0 sm:top-0 sm:block sm:h-screen sm:w-[var(--index-width)] sm:overflow-hidden sm:border-r sm:p-[var(--space-page)] rule-border">
      <h1 className="type-display border-b rule-border pb-[var(--space-gap)]">
       <Link href="/" className="accent-text">
@@ -64,7 +64,7 @@ export default function SiteFrame({ children }: { children: ReactNode }) {
      </footer>
     </aside>
 
-    <section className="sm:ml-[var(--index-width)]">
+    <section className="sm:ml-[var(--index-width)] sm:h-screen sm:overflow-y-auto">
      <div>{children}</div>
      <footer
       className="-mx-[var(--space-page)] bg-white text-black/40 rule-top sm:hidden"
