@@ -112,6 +112,21 @@ button {
   }
 }
 
+@media (hover: none) and (pointer: coarse) {
+  .project-index-link:active {
+    opacity: 1;
+  }
+
+  .project-index-link:active .project-index-image {
+    filter: none;
+    opacity: 1;
+  }
+
+  .project-index-link:active img {
+    opacity: 1;
+  }
+}
+
 .type-display {
   font-size: var(--type-display);
   line-height: 1.04;
